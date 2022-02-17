@@ -1,7 +1,6 @@
 .logo {
    height: 3.25rem;
    margin-left: 3rem;
-
 }
 
 .search {
@@ -32,9 +31,9 @@
       &::-webkit-input-placeholder {
          font-weight: 100;
          font-size: 1.4rem;
-         color: var(--color-grey-dark-3)
+         color: var(--color-grey-dark-3);
       }
-}
+   }
 
    &__button {
       border: none;
@@ -47,7 +46,6 @@
       &:active {
          transform: translateY(2px);
       }
-
    }
 
    &__icon {
@@ -57,19 +55,17 @@
    }
 }
 
-
 .user-nav {
    // background-color: chartreuse;
    display: flex;
    align-items: center;
 
    align-self: stretch;
-   
 
    & > * {
       padding: 0 2rem;
       cursor: pointer;
-      height:100%;
+      height: 100%;
       display: flex;
       align-items: center;
    }
@@ -80,7 +76,6 @@
 
    &__icon-box {
       position: relative;
-
    }
 
    &__icon {
@@ -103,24 +98,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-         }
+   }
 
    &__user {
       display: flex;
       flex-direction: column;
-      justify-content: space-between
+      justify-content: space-between;
    }
 
    &__user-name {
       font-size: 12px;
-      font-weight:400;
+      font-weight: 400;
    }
 
    &__user-photo {
       height: 4.5rem;
       border-radius: 40%;
    }
-
 }
 
 /////SIDE BAR NAV - ------------->
@@ -129,28 +123,25 @@
    font-size: 1.4rem;
    list-style: none;
    margin-top: 3.5rem;
-   
-
 
    &__item {
       position: relative;
 
       &:not(:last-child) {
          margin-bottom: 0.5rem;
-
       }
    }
 
    &__item::before {
-      content: "";
-      position:absolute;
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
       height: 100%;
-      width:5px;
+      width: 5px;
       background-color: var(--color-primary);
       transform: scaleY(0);
-      transition: transform 0.2s, width 0.4s cubic-bezier(1,0,0,1) .2s, background-color 0.1s;
+      transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
    }
 
    &__item:hover::before,
@@ -159,10 +150,9 @@
       width: 100%;
    }
 
-   &__item--active::before{
+   &__item--active::before {
       background-color: var(--color-primary-light);
    }
-
 
    &__link:link,
    &__link:visited {
@@ -184,7 +174,6 @@
       margin-right: 2rem;
       fill: currentColor;
    }
-
 }
 
 /// LEGAL TEXT
@@ -199,7 +188,6 @@
 ///GALLERY PHOTOS
 
 .gallery {
-
    display: flex;
 
    &__photo {
@@ -212,8 +200,8 @@
 
 .overview {
    display: flex;
-   justify-content:space-between;
-   align-items:center;
+   justify-content: space-between;
+   align-items: center;
    border-bottom: 1px solid var(--color-grey-light-2);
 
    &__heading {
@@ -222,7 +210,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: 1.5rem 3rem;
-
    }
 
    &__stars {
@@ -233,10 +220,10 @@
 
    &__icon-star,
    &__icon-location {
-      width:2rem;
+      width: 2rem;
       height: 2rem;
       padding-right: 3.5px;
-      fill:var(--color-primary);
+      fill: var(--color-primary);
    }
 
    &__icon-location {
@@ -246,7 +233,7 @@
    &__location {
       font-size: 1.2rem;
       display: flex;
-      vertical-align:center;
+      vertical-align: center;
    }
 
    &__rating {
@@ -274,8 +261,6 @@
    }
 }
 
-
-
 .btn-inline {
    border: none;
    color: var(--color-primary);
@@ -286,8 +271,17 @@
    cursor: pointer;
    transition: all 0.2s;
 
-   &:hover{
+   & span {
+      margin-left: 3px;
+      transition: margin-left 0.2s;
+   }
+
+   &:hover {
       color: var(--color-grey-dark-1);
+
+      & span {
+         margin-left: 8px;
+      }
    }
 
    &:focus {
@@ -297,7 +291,6 @@
 }
 
 @keyframes pulsate {
-   
    0% {
       transform: scale(1);
       box-shadow: none;
@@ -305,11 +298,154 @@
 
    50% {
       transform: scale(1.05);
-      box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
    }
 
    100% {
       transform: scale(1);
       box-shadow: none;
+   }
+}
+
+//description paragraph
+
+.paragraph:not(:last-of-type) {
+   margin-bottom: 2rem;
+}
+
+//list
+
+.list {
+   list-style-type: none;
+   margin: 3rem 0;
+   padding: 3rem 0;
+   border-top: 1px solid var(--color-grey-light-2);
+   border-bottom: 1px solid var(--color-grey-light-2);
+
+   display: flex;
+   flex-wrap: wrap;
+
+   &__item {
+      flex: 0 0 50%;
+      margin-bottom: 0.7rem;
+   }
+
+   &__item::before {
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.7rem;
+
+      //newer browsers use: Masks
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+
+      //older  browsers
+      // background-image: url(../img/chevron-thin-right.svg);
+   }
+}
+
+//RECOMMEND
+
+.recommend {
+   font-size: 1.3rem;
+   color: var(--color-grey-dark-3);
+
+   display: flex;
+   align-items: center;
+
+   &__count {
+      margin-right: auto;
+   }
+
+   &__friends {
+   }
+
+   &__photo {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-sizing: content-box;
+
+      &:not(:last-child) {
+         margin-right: -1.5rem;
+      }
+   }
+}
+
+//REVIEWS
+
+.review {
+   background-color: #fff;
+   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+   padding: 3rem;
+   margin-bottom: 3.5rem;
+   position: relative;
+   overflow: hidden;
+
+   &__text {
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 10;
+   }
+
+   &__user {
+      display: flex;
+      justify-content: space-between;
+
+      &-box {
+         
+         display: flex;
+         flex-direction: column;
+         flex-grow: 1;
+         padding-left: 1rem;
+         // justify-content: flex-start;
+      }
+
+      &-name {
+         
+         text-transform: uppercase;
+         font-weight: 600;
+         font-size: 1.2rem;
+
+      }
+
+      &-date {
+         font-size: 1.1rem;
+         color: var(--color-grey-light-4)
+         
+      }
+   }
+
+   &__photo {
+      height:4.5rem;
+      width: 4.5rem;
+      border-radius: 50%;
+      
+   }
+
+   
+
+   &__rating {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+   }
+
+   &::before {
+      content: "\201C";
+      position: absolute;
+      line-height: 1;
+      top: -2.75rem;
+      left: -1rem;
+      font-size: 20rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--color-grey-light-3);
+      z-index: 1;
+
    }
 }
